@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="original"></p>
+    <p id="reversed"></p>
+
+    <script>
+        // Function to reverse a number
+        function reverseNumber(num) {
+          // Convert the number to a string to enable string manipulation
+          var numString = num.toString();
+          
+          // Reverse the string
+          var reversedString = '';
+          for (var i = numString.length - 1; i >= 0; i--) {
+            reversedString += numString[i];
+          }
+          
+          // Convert the reversed string back to a number
+          var reversedNumber = parseInt(reversedString);
+          
+          return reversedNumber;
+        }
+    
+        // Example usage
+        var x = 32243;
+        var reversed = reverseNumber(x);
+        
+        // Display original number and reversed number on the webpage
+        document.getElementById('original').textContent = "Original number: " + x;
+        document.getElementById('reversed').textContent = "Reversed number: " + reversed;
+    </script>
+</body>
+</html>

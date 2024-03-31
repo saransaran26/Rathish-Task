@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd/Even Checker</title>
+</head>
+<body>
+    <h2>Odd/Even Numbers</h2>
+  <ul id="output"></ul>
+
+  <script>
+    function checkOddEven(number) {
+      if (number % 2 === 0) {
+        return "even";
+      } else {
+        return "odd";
+      }
+    }
+
+    
+    var output = document.getElementById('output');
+    for (var i = 0; i <= 15; i++) {
+      var li = document.createElement('li');
+      li.textContent = i + " is " + checkOddEven(i);
+      output.appendChild(li);
+    }
+  </script>
+</body>
+</html>

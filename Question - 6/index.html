@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Date</title>
+    
+</head>
+<body>
+    <h2>Current Date</h2>
+    <p id="currentDate"></p>
+
+    <script>
+        function getCurrentDate() {
+          var today = new Date();
+          var day = today.getDate();
+          var month = today.getMonth() + 1; // January is 0!
+          var year = today.getFullYear();
+    
+          // Add leading zero if day or month is a single digit
+          if (day < 10) {
+            day = '0' + day;
+          }
+          if (month < 10) {
+            month = '0' + month;
+          }
+    
+          var separator = '-'; // You can change this to '/' if you prefer
+          var dateFormat = 'dd-mm-yyyy'; // Change the format as needed
+    
+          // Replace placeholders with actual date components
+          dateFormat = dateFormat.replace('dd', day);
+          dateFormat = dateFormat.replace('mm', month);
+          dateFormat = dateFormat.replace('yyyy', year);
+    
+          // Output the formatted date to the webpage
+          document.getElementById('currentDate').innerText = dateFormat;
+        }
+    
+        // Call the function to get current date when the page loads
+        window.onload = getCurrentDate;
+      </script>
+</body>
+</html>
